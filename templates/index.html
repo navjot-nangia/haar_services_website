@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haar Services | Firewood, Bee Removal & Termite Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo">Haar Services<span class="accent">.</span></a>
+        <a href="tel:4044443203" class="nav-btn">Call 404-444-3203</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+        <span class="hero-subtitle">Knoxville, Tennessee</span>
+        <h1>Nature’s Best,<br>Managed with Care.</h1>
+        <p>Premium Seasoned Firewood • Humane Bee Removal • Expert Termite Defense</p>
+        <div class="hero-buttons">
+            <a href="tel:4044443203" class="call-btn primary-btn">Request a Quote</a>
+            <a href="#services" class="call-btn secondary-btn">View Services</a>
+        </div>
+    </div>
+</header>
+
+<section class="about section-pad">
+    <div class="container fade-in">
+        <div class="section-header">
+            <span class="pre-title">Our Commitment</span>
+            <h2>Serving Knoxville with Integrity</h2>
+            <div class="divider"></div>
+        </div>
+        <p class="lead-text">We provide essential outdoor services with a focus on quality and safety. From warming your home with seasoned wood to protecting your property from pests, we are your local Knoxville experts.</p>
+    </div>
+</section>
+
+<section id="services" class="services section-pad bg-light">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="pre-title">Expert Solutions</span>
+            <h2>Professional Services</h2>
+        </div>
+        
+        <div class="service-container">
+            <div class="card fade-in delay-1">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/woodpile.jpg') }}" alt="Seasoned Firewood">
+                </div>
+                <div class="card-content">
+                    <h3>Seasoned Firewood</h3>
+                    <p class="sub-label">Premium Hardwood Mix</p>
+                    <p>Kiln-dried and seasoned hardwood. Burns clean, hot, and efficient. Delivered and stacked for your convenience at your residence or business.</p>
+                    <a href="tel:4044443203" class="text-link">Call for Delivery &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card fade-in delay-2">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/bee_removal.jpg') }}" alt="Honey Bee Removal">
+                </div>
+                <div class="card-content">
+                    <h3>Honey Bee Removal</h3>
+                    <p class="sub-label">Safe & Humane Relocation</p>
+                    <p>Specializing in the live removal of honey bee colonies from walls, attics, and trees. We prioritize the health of the hive and your home.</p>
+                    <a href="tel:4044443203" class="text-link">Get a Quote &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card fade-in delay-3">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/termite.jpg') }}" alt="Termite Removal">
+                </div>
+                <div class="card-content">
+                    <h3>Termite Defense</h3>
+                    <p class="sub-label">Full Property Protection</p>
+                    <p>Don't let pests compromise your investment. Our professional treatment creates a lasting barrier to protect your foundation and structure.</p>
+                    <a href="tel:4044443203" class="text-link">Book Inspection &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact section-pad">
+    <div class="container fade-in">
+        <div class="contact-box">
+            <h2>Ready to Get Started?</h2>
+            <p>Call or text us today for a custom quote and fast service.</p>
+            <a href="tel:4044443203" class="big-phone">404-444-3203</a>
+            <p class="location">📍 Based in Knoxville, TN</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Haar Services Knoxville. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    });
+</script>
+
+</body>
+</html>
