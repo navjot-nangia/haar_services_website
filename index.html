@@ -110,6 +110,17 @@
             <h2>Ready to Get Started?</h2>
             <p>Call or text us today for a custom quote and fast service.</p>
             <a href="tel:8652294667" class="big-phone">865-229-4667</a>
+            <div class="creator-badge">
+                <button class="creator-toggle" type="button" aria-expanded="false" aria-controls="creator-contact-main">
+                    Need a website?
+                </button>
+                <div class="creator-contact" id="creator-contact-main" hidden>
+                    <span>Call/Text:</span>
+                    <a href="tel:4044836216">404-483-6216</a>
+                    <span>or Email me at:</span>
+                    <a href="mailto:mehta.dimple94@gmail.com?subject=Website%20Inquiry">mehta.dimple94@gmail.com</a>
+                </div>
+            </div>
             <p class="location">📍 Based in Knoxville, TN</p>
         </div>
     </div>
@@ -119,10 +130,10 @@
     <div class="container">
         <p>© 2026 Haar Services Knoxville. All Rights Reserved.</p>
         <div class="creator-badge">
-            <button class="creator-toggle" type="button" aria-expanded="false" aria-controls="creator-contact">
+            <button class="creator-toggle" type="button" aria-expanded="false" aria-controls="creator-contact-footer">
                 Need a website?
             </button>
-            <div class="creator-contact" id="creator-contact" hidden>
+            <div class="creator-contact" id="creator-contact-footer" hidden>
                 <span>Call/Text:</span>
                 <a href="tel:4044836216">404-483-6216</a>
                 <span>or Email me at:</span>
@@ -149,16 +160,17 @@
         else nav.classList.remove('scrolled');
     });
 
-    const creatorToggle = document.querySelector('.creator-toggle');
-    const creatorContact = document.getElementById('creator-contact');
+    document.querySelectorAll('.creator-toggle').forEach((creatorToggle) => {
+        const creatorContact = document.getElementById(creatorToggle.getAttribute('aria-controls'));
 
-    if (creatorToggle && creatorContact) {
-        creatorToggle.addEventListener('click', () => {
-            const isExpanded = creatorToggle.getAttribute('aria-expanded') === 'true';
-            creatorToggle.setAttribute('aria-expanded', String(!isExpanded));
-            creatorContact.hidden = isExpanded;
-        });
-    }
+        if (creatorContact) {
+            creatorToggle.addEventListener('click', () => {
+                const isExpanded = creatorToggle.getAttribute('aria-expanded') === 'true';
+                creatorToggle.setAttribute('aria-expanded', String(!isExpanded));
+                creatorContact.hidden = isExpanded;
+            });
+        }
+    });
 </script>
 
 </body>
