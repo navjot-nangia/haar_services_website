@@ -103,6 +103,17 @@
 <footer>
     <div class="container">
         <p>© 2026 Haar Services Knoxville. All Rights Reserved.</p>
+        <div class="creator-badge">
+            <button class="creator-toggle" type="button" aria-expanded="false" aria-controls="creator-contact">
+                Need a website?
+            </button>
+            <div class="creator-contact" id="creator-contact" hidden>
+                <span>Call/Text:</span>
+                <a href="tel:4044836216">404-483-6216</a>
+                <span>or Email me at:</span>
+                <a href="mailto:mehta.dimple94@gmail.com?subject=Website%20Inquiry">mehta.dimple94@gmail.com</a>
+            </div>
+        </div>
     </div>
 </footer>
 
@@ -122,6 +133,17 @@
         if (window.scrollY > 50) nav.classList.add('scrolled');
         else nav.classList.remove('scrolled');
     });
+
+    const creatorToggle = document.querySelector('.creator-toggle');
+    const creatorContact = document.getElementById('creator-contact');
+
+    if (creatorToggle && creatorContact) {
+        creatorToggle.addEventListener('click', () => {
+            const isExpanded = creatorToggle.getAttribute('aria-expanded') === 'true';
+            creatorToggle.setAttribute('aria-expanded', String(!isExpanded));
+            creatorContact.hidden = isExpanded;
+        });
+    }
 </script>
 
 </body>
